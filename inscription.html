@@ -6,6 +6,9 @@
     <title>Inscription - Formation en Céramique</title>
     <link rel="stylesheet" href="styles.css">
     <script>
+        // Initialiser le compteur à partir du localStorage ou à 0
+        let submissionCount = localStorage.getItem('submissionCount') ? parseInt(localStorage.getItem('submissionCount')) : 0;
+
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('registration-form').addEventListener('submit', function(event) {
                 var email = document.getElementById('email').value;
@@ -16,11 +19,27 @@
                 if (email.indexOf('@') === -1) {
                     event.preventDefault();
                     alert('Erreur : Veuillez entrer une adresse email valide.');
+                    return;
                 }
 
                 if (password !== confirmPassword) {
                     event.preventDefault();
                     alert('Erreur : Les mots de passe ne correspondent pas.');
+                    return;
+                }
+
+                // Incrémenter le compteur à chaque soumission réussie
+                submissionCount++;
+                localStorage.setItem('submissionCount', submissionCount);
+
+                // Simuler un bug de stockage après 3 soumissions
+                if (submissionCount >= 3) {
+                    event.preventDefault();
+                    alert('Erreur : Impossible de soumettre le formulaire, veuillez réessayer plus tard.');
+
+                    // Réinitialiser le compteur après l'erreur
+                    submissionCount = 0;
+                    localStorage.setItem('submissionCount', submissionCount);
                 }
             });
         });

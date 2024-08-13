@@ -48,11 +48,27 @@
 <script>
     document.querySelector('form').addEventListener('submit', function(event) {
         var projectName = document.getElementById('project-name').value;
+        var description = document.getElementById('description').value;
+
+        // Validation incohérente du nom de projet
         if (projectName.toLowerCase() === 'bugtest') {
             event.preventDefault();
-            alert('Erreur : Un problème est survenu lors de la soumission du projet.');
+            alert('Erreur : Nom du projet invalide.');
+        } else if (projectName.length < 5) {
+            event.preventDefault();
+            alert('Erreur : Le nom du projet est trop court.');
+        }
+
+        // Validation incohérente de la description
+        if (description.length < 4) {
+            event.preventDefault();
+            alert('Description trop courte');
+        } else if (description.includes('test')) {
+            event.preventDefault();
+            alert('Erreur critique dans la description.');
         }
     });
+
 </script>
 </body>
 </html>

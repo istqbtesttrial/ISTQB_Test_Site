@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2e6d9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d4a373;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #b5835a;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #d4a373;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 20px;
+}
+
+/* Cacher le bouton par défaut */
+#special-button {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Afficher le bouton pour une grande largeur et hauteur */
+@media (min-width: 1200px) and (min-height: 700px) {
+    #special-button {
+        display: block;
+    }
+}

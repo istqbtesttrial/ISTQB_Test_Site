@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Formation en Céramique</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('registration-form').addEventListener('submit', function(event) {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirm-password').value;
+
+                // Validation incorrecte pour illustrer le bug
+                if (email.indexOf('@') === -1) {
+                    event.preventDefault();
+                    alert('Erreur : Veuillez entrer une adresse email valide.');
+                }
+
+                if (password !== confirmPassword) {
+                    event.preventDefault();
+                    alert('Erreur : Les mots de passe ne correspondent pas.');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <h1>Inscrivez-vous à notre Formation en Céramique</h1>
+    <p>Remplissez le formulaire ci-dessous pour vous inscrire à notre formation.</p>
+</header>
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="techniques.html">Techniques de Base</a></li>
+        <li><a href="avancées.html">Techniques Avancées</a></li>
+        <li><a href="processus.html">Processus de Création</a></li>
+        <li><a href="projets.html">Exemples de Projets</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+    </ul>
+</nav>
+<section>
+    <h2>Formulaire d'Inscription</h2>
+    <form id="registration-form" action="#" method="post">
+        <label for="name">Nom Complet :</label>
+        <input type="text" id="name" name="name" placeholder="Entrez votre nom complet">
+        <br><br>
+        <label for="email">Email :</label>
+        <input type="text" id="email" name="email" placeholder="Entrez votre email">
+        <br><br>
+        <label for="password">Mot de Passe :</label>
+        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+        <br><br>
+        <label for="confirm-password">Confirmez le Mot de Passe :</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe">
+        <br><br>
+        <button type="submit">S'inscrire</button>
+    </form>
+</section>
+<footer>
+    <p>&copy; 2024 Formation en Céramique - Tous droits réservés</p>
+</footer>
+</body>
+</html>

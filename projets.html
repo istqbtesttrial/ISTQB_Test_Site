@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de Projets - Formation en Céramique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Exemples de Projets en Céramique</h1>
+    <p>Découvrez quelques exemples de projets réalisés par nos étudiants.</p>
+</header>
+<nav>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="techniques.html">Techniques de Base</a></li>
+        <li><a href="avancées.html">Techniques Avancées</a></li>
+        <li><a href="processus.html">Processus de Création</a></li>
+        <li><a href="projets.html">Exemples de Projets</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+    </ul>
+</nav>
+<section>
+    <h2>Galerie de Projets</h2>
+    <p>Voici quelques-unes des réalisations de nos étudiants :</p>
+    <ul>
+        <li>Bol en céramique émaillé</li>
+        <li>Vase sculpté avec motifs floraux</li>
+        <li>Assiette décorative en faïence</li>
+        <li>Sculpture abstraite en terre cuite</li>
+    </ul>
+
+    <h3>Soumettez votre projet pour critique</h3>
+    <form action="#" method="post">
+        <label for="project-name">Nom du Projet :</label>
+        <input type="text" id="project-name" name="project-name" placeholder="Entrez le nom de votre projet">
+        <br><br>
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" placeholder="Décrivez votre projet ici"></textarea>
+        <br><br>
+        <button type="submit">Soumettre</button>
+    </form>
+</section>
+<footer>
+    <p>&copy; 2024 Formation en Céramique - Tous droits réservés</p>
+</footer>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        var projectName = document.getElementById('project-name').value;
+        if (projectName.toLowerCase() === 'bugtest') {
+            event.preventDefault();
+            alert('Erreur : Un problème est survenu lors de la soumission du projet.');
+        }
+    });
+</script>
+</body>
+</html>

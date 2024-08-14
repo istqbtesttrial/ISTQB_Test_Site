@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techniques Avancées - Formation en Céramique</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Empêche la soumission réelle pour afficher la notification
+                alert('Votre message a été envoyé avec succès !');
+                // Si vous souhaitez réellement soumettre le formulaire après l'alerte, retirez le event.preventDefault()
+            });
+        });
+    </script>
 </head>
 <body>
 <header>
